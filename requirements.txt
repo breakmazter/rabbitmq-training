@@ -1,1 +1,2 @@
+# have a look at libs which automaticaly generates req file. 
 pika==1.2.0
