@@ -11,6 +11,7 @@ def main():
     channel.queue_declare(queue='mazan_green_queue', durable=True)
 
     message = input("Write coeff : ")
+    # you should move publishing message to a separate method as you don't need to declare new connections or close each time
     channel.basic_publish(exchange='', routing_key='mazan_green_queue', body=message,
                           properties=pika.BasicProperties(delivery_mode=2, ))
     print("[Producer] sent %r" % (message,))
